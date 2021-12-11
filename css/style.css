@@ -15,6 +15,7 @@ html {
 
 body {
   max-width: 1440px;
+  min-height: 100vh;
   font-size: 18px;
   margin: auto;
   overflow-x: hidden;
@@ -366,11 +367,17 @@ main {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   #navigation {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .right img {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

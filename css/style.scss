@@ -28,8 +28,10 @@ html {
 
 body {
     max-width: 1440px;
+    min-height: 100vh;
     font-size: 18px;
     margin: auto;
+    overflow-x: hidden;
 }
 
 header {
@@ -318,8 +320,14 @@ main {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     #navigation {
         display: flex !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .right img {
+        width: 100%;
     }
 }
