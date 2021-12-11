@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+
+$very-dark-blue: hsl(230, 29%, 20%);
+$red: hsl(0, 100%, 68%);
+$dark-grayish-blue: hsl(230, 11%, 40%);
+$light-grayish-blue: hsl(207, 33%, 95%);
+$grayish-blue: hsl(231, 7%, 65%);
+
+@mixin flexBox($direction, $justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    cursor: default;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 1440px;
+    font-size: 18px;
+    margin: auto;
+}
+
+header {
+    margin: 40px 8%;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    position: relative;
+}
+
+nav,
+.navigation {
+    @include flexBox(row, space-between);
+}
+
+.navigation a {
+    margin: 0 20px;
+    font-size: 18px;
+    color: $very-dark-blue;
+}
+
+.circle {
+    pointer-events: none;
+    position: relative;
+}
+
+.login a {
+    color: $grayish-blue;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background-color: $grayish-blue;
+    bottom: 5px;
+    border-radius: 50%;
+}
+
+#menu-icon {
+    display: none;
+}
+
+#navigation {
+    display: flex;
+}
+
+main {
+    @include flexBox(row, space-between);
+    margin-top: 140px;
+}
+
+.left,
+.right {
+    width: 50%;
+}
+
+.left {
+    margin-left: 8%;
+    text-transform: uppercase;
+}
+
+.intro {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $grayish-blue;
+    letter-spacing: 4px;
+}
+
+.intro span {
+    background-color: $very-dark-blue;
+    color: $light-grayish-blue;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    letter-spacing: 0;
+}
+
+.title {
+    font-size: 4rem;
+    margin: 20px 0;
+}
+
+.sub-heading {
+    text-transform: none;
+    font-family: 'Barlow', sans-serif;
+    color: $grayish-blue;
+}
+
+.condensed {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.cta {
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+.btn-schedule {
+    color: $light-grayish-blue;
+    background-color: $red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.btn-schedule:hover {
+    opacity: 0.9;
+}
+
+.btn-live-preview {
+    color: $grayish-blue;
+    letter-spacing: 4px;
+}
+
+.bg-illustration {
+    height: 50vh;
+    width: 45%;
+    border-bottom-left-radius: 70px;
+    z-index: -1;
+    background-color: $light-grayish-blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.right {
+    position: relative;
+}
+
+.right img {
+    position: absolute;
+    top: -200px;
+}
+
+@media (max-width: 1260px) {
+    .right img {
+        width: 140%;
+    }
+
+    .bg-illustration {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 1045px) {
+
+    .bg-illustration {
+        height: 35vh;
+        width: 50%;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    header {
+        margin: 40px 4%;
+    }
+
+    .left {
+        margin-left: 4%;
+    }
+}
+
+@media (max-width: 860px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .bg-illustration {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    main {
+        @include flexBox(column-reverse, center);
+        margin: 60px 4% 40px 4%
+    }
+
+    .bg-illustration {
+        height: 50vh;
+    }
+
+    .right img {
+        width: 100%;
+        right: -60px;
+        top: 0;
+    }
+
+    header {
+        margin: 40px 8%;
+    }
+
+    .left {
+        margin: 55vh 0 0 16%;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        text-align-last: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 20px);
+        background-color: white;
+        padding: 20px;
+        width: 80%;
+        z-index: 10;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .navigation a {
+        margin-bottom: 10px;
+        @include flexBox(column, center);
+    }
+
+    #navigation {
+        display: none;
+    }
+
+    .login {
+        @include flexBox(column, center);
+    }
+
+    .circle::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        height: 1px;
+        width: 200px;
+        top: 3px;
+        background-color: $grayish-blue;
+        bottom: 5px;
+        border-radius: 50%;
+    }
+
+}
+
+@media (max-width: 445px) {
+    .left {
+        margin-top: 250px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .intro,
+    .cta {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 340px) {
+    .cta {
+        @include flexBox(column, center);
+    }
+
+    .btn-live-preview {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 285px) {
+    .intro {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 767px) {
+    #navigation {
+        display: flex !important;
+    }
+}
