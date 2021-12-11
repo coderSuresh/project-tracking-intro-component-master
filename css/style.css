@@ -367,7 +367,7 @@ main {
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 769px) {
   #navigation {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
