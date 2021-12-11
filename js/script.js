@@ -5,12 +5,12 @@ var menuItem = document.getElementById("navigation");
 
 menu.addEventListener("click", () => {
     if (!clicked) {
-        menu.src = "https://github.com/coderSuresh/project-tracking-intro-component-master/blob/main/images/icon-close.svg";
+        menu.src = "./images/icon-close.svg";
         menuItem.style.display = "flex";
         clicked = true;
     }
     else {
-        menu.src = "https://github.com/coderSuresh/project-tracking-intro-component-master/blob/main/images/icon-hamburger.svg";
+        menu.src = "./images/icon-hamburger.svg";
         menuItem.style.display = "none";
         clicked = false;
     }
